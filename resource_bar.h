@@ -2,22 +2,29 @@
 #ifndef RESOURCE_BAR_H
 #define RESOURCE_BAR_H
 
-#include "reference.h"
+#include "scene/2d/node_2d.h"
 
-class ResourceBar : public Reference {
-    OBJ_TYPE(ResourceBar,Reference);
+class ResourceBar : public Node2D {
+    OBJ_TYPE(ResourceBar, Node2D);
 
-    int count;
+	// Data members
+	int maxResource;
+	int currResource;
 
 protected:
     static void _bind_methods();
 public:
 
-    void add(int value);
+    void increase(int amount);
+	void decrease(int amount);
     void reset();
-    int get_total() const;
+    int get_max() const;
+    int get_current() const;
+	void set_max(int value);
+	void set_current(int value);
 
     ResourceBar();
+    ResourceBar(int max);
 };
 
 #endif
