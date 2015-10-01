@@ -17,14 +17,12 @@ public:
 
     void increase(int amount);
 	void decrease(int amount);
-    void reset();
     int get_max() const;
     int get_current() const;
 	void set_max(int value);
 	void set_current(int value);
 
     ResourceBar();
-    ResourceBar(int max);
 };
 
 #endif
