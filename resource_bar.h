@@ -9,6 +9,7 @@ class ResourceBar : public Node2D {
 
 	// Data members
 	int maxResource;
+	int minResource;
 	int currResource;
 
 protected:
@@ -18,8 +19,10 @@ public:
     void increase(int amount);
 	void decrease(int amount);
     int get_max() const;
+    int get_min() const;
     int get_current() const;
 	void set_max(int value);
+	void set_min(int value);
 	void set_current(int value);
 
     ResourceBar();
